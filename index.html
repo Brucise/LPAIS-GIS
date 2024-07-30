@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>飞行器路径规划</title>
+    <link href="./scripts/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script src="./scripts/Cesium/Cesium.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+  </head>
+  <body>
+    <div id="cesiumContainer"></div>
+
+    <div class="toolbox">
+      <button id="zoomIn" class="tool-item">
+        <img class="tool-image" src="../SampleData/zoomIn.png" alt="" />
+      </button>
+      <button id="zoomOut" class="tool-item">
+        <img class="tool-image" src="../SampleData/zoomOut.png" alt="" />
+      </button>
+    </div>
+
+    <div id="pathManagement" class="path-management">
+      <h3>路径管理</h3>
+      <div class="path-actions">
+        <button id="addPath" class="tool-item">开始添加路径</button>
+<!--        <button id="removePath" class="tool-item">删除路径</button>-->
+      </div>
+    </div>
+    <div class="flight-control">
+      <div class="path-selection">
+        <select id="pathSelector">
+          <option value="">选择路径</option>
+        </select>
+      </div>
+      <div class="camera-view">
+        <label for="cameraView">视角:</label>
+        <select id="cameraView">
+          <option value="firstPerson">第一人称视角</option>
+          <option value="thirdPerson">第三人称视角</option>
+        </select>
+      </div>
+      <button id="start" class="tool-item">开始飞行</button>
+      <button id="quit" class="tool-item">停止飞行</button>
+    </div>
+    <script type="text/javascript" src="vis_1.js"></script>
+  </body>
+</html>
+
