@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>飞行器路径规划</title>
+    <link href="scripts/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script src="scripts/Cesium/Cesium.js"></script>
+    <link href="index.css" rel="stylesheet" />
+    <link href="layui.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+  </head>
+
+  <body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo" style="font-size: 30px;">GIS系统</div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item"><a href="">控制台</a></li>
+        <li class="layui-nav-item"><a href="">管理</a></li>
+        <li class="layui-nav-item"><a href="">用户</a></li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">其它系统</a>
+          <dl class="layui-nav-child">
+            <dd><a href="">管理1</a></dd>
+            <dd><a href="">管理2</a></dd>
+            <dd><a href="">管理3</a></dd>
+          </dl>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+            <img src="image/user_pos.png" class="layui-nav-img">
+            GIS
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="">基本资料</a></dd>
+            <dd><a href="">安全设置</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">退了</a></li>
+      </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+          <li class="layui-nav-item layui-nav-itemed">
+            <a class="" href="javascript:;">所有功能</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;">列表一</a></dd>
+              <dd><a href="javascript:;">列表二</a></dd>
+              <dd><a href="javascript:;">列表三</a></dd>
+              <dd><a href="">超链接</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">解决方案</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;">列表一</a></dd>
+              <dd><a href="javascript:;">列表二</a></dd>
+              <dd><a href="">超链接</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a href="">配置</a></li>
+          <li class="layui-nav-item"><a href="">发布</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="layui-body" style="bottom: 0">
+      <!-- 内容主体区域 -->
+      <div id="cesiumContainer"></div>
+
+      <div class="toolbox">
+        <button id="zoomIn" class="tool-item">
+          <img class="tool-image" src="sampledata/zoomIn.png" alt="" />
+        </button>
+        <button id="zoomOut" class="tool-item">
+          <img class="tool-image" src="sampledata/zoomOut.png" alt="" />
+        </button>
+      </div>
+      <div id="pathManagement" class="path-management">
+        <h3>路径管理</h3>
+        <div class="path-actions">
+          <button id="addPath" class="tool-item">开始添加路径</button>
+          <!--        <button id="removePath" class="tool-item">删除路径</button>-->
+        </div>
+      </div>
+      <div class="flight-control">
+        <div class="path-selection">
+          <select id="pathSelector">
+            <option value="">选择路径</option>
+          </select>
+        </div>
+        <div class="camera-view">
+          <label for="cameraView">视角:</label>
+          <select id="cameraView">
+            <option value="firstPerson">第一人称视角</option>
+            <option value="thirdPerson">第三人称视角</option>
+          </select>
+        </div>
+        <button id="start" class="tool-item">开始飞行</button>
+        <button id="quit" class="tool-item">停止飞行</button>
+      </div>
+
+    </div>
+    <!--
+    <div class="layui-footer">
+      © layui.com - 底部固定区域
+    </div>-->
+  </div>
+
+  <!-- 引入js   -->
+  <script type="text/javascript" src="vis_1.js"></script>
+  <script type="text/javascript" src="layui.all.js"></script>
+
+  </body>
+</html>
+
