@@ -1,5 +1,9 @@
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZmU4NDQwZS02ZDJhLTQ0N2YtYmI2OS1hOTExOTM2ZTA4NmMiLCJpZCI6MjMwNjgxLCJpYXQiOjE3MjIyNDk0OTd9.Z4ry8sAwhUIJc0DoticSaUUie6uOJmPcGVYpztUkj3Q'
 var viewer = new Cesium.Viewer('cesiumContainer', {
+        terrainProvider: Cesium.createWorldTerrain({        //开启在线地形
+              requestWaterMask: true,                           //指示客户端是否应从服务器请求额外的照明信息
+              requestVertexNormals: true                        //指示客户端是否应从服务器请求每个瓷砖水面具
+        }),
         imageryProvider: new Cesium.UrlTemplateImageryProvider({
             url: 'http://mt1.google.cn/maps/vt?lyrs=s&x={x}&y={y}&z={z}',
             credit: '',

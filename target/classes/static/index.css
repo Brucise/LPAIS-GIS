@@ -23,14 +23,15 @@ html, body, #cesiumContainer {
 }
 
 .path-management {
-  top: 10px;
+  top: 400px;
   right: 10px;
   width: 200px;
 }
 
 .flight-control {
-  top: 130px;
+  top: 475px;
   right: 10px;
+  width: 200px;
 }
 
 .tool-item, .tool-item img {
@@ -48,8 +49,8 @@ html, body, #cesiumContainer {
 
 .path-actions button, .flight-control button {
   width: 100%;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin-bottom: 2px;
+  padding: 2px;
 }
 
 .path-selection, .camera-view {
